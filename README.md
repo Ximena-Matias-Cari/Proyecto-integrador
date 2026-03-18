@@ -139,6 +139,92 @@ Aquí se muestra la interfaz de la aplicación:
 
 ---
 
+## Programa funcionando
+
+<img width="1918" height="1032" alt="image" src="https://github.com/user-attachments/assets/0b69fa6e-28af-4d47-95e0-e5e1f9c9d751" />
+
+<img width="1918" height="912" alt="image" src="https://github.com/user-attachments/assets/90ee60dd-55a7-426c-998e-5663038061d8" />
+
+<img width="1913" height="401" alt="image" src="https://github.com/user-attachments/assets/69e126bd-6124-481b-a402-250f529f84f5" />
+
+
+## Carpeta con imagenes
+
+
+
+<img width="1001" height="452" alt="image" src="https://github.com/user-attachments/assets/00439613-bd16-4e8c-b625-6becfebbefd6" />
+
+
+## Gestión de Recursos: Configuración del Directorio `assets`
+
+Para permitir que la aplicación reconozca y cargue imágenes locales, se utilizó un directorio llamado `assets`, el cual contiene todos los recursos gráficos del proyecto.
+
+### Estructura del directorio
+
+Se creó una carpeta llamada `assets` en el mismo nivel que el archivo principal del programa (`Tienda.py`):
+
+```
+proyecto/
+│
+├── Tienda.py
+│
+└── assets/
+    ├── laptop.jpg
+    ├── audifonos.jpg
+    ├── celular.jpg
+    ├── tablet.jpg
+    └── reloj.jpg
+```
+
+Esta organización permite mantener separados los recursos visuales del código fuente, facilitando su administración.
+
+---
+
+### Configuración en el código
+
+Para que el framework reconozca automáticamente las imágenes, se utilizó el parámetro `assets_dir` al ejecutar la aplicación:
+
+```python
+ft.app(target=main, assets_dir="assets")
+```
+
+Este parámetro indica a Flet que todos los archivos estáticos (como imágenes) se encuentran dentro de la carpeta `assets`.
+
+---
+
+### Uso de imágenes en el código
+
+Dentro del programa, las imágenes se referencian únicamente por su nombre, sin necesidad de especificar la ruta completa:
+
+```python
+ft.Image(src=producto["ruta_imagen"])
+```
+
+Y en la estructura de datos:
+
+```python
+"ruta_imagen": "laptop.jpg"
+```
+
+Gracias a la configuración previa, Flet busca automáticamente el archivo dentro del directorio `assets`.
+
+---
+
+### Consideraciones importantes
+
+* La carpeta debe llamarse exactamente `assets` (en minúsculas).
+* Debe estar ubicada en el mismo nivel que el archivo principal.
+* Los nombres de las imágenes deben coincidir exactamente con los definidos en el código.
+* Se recomienda utilizar formatos compatibles como `.jpg` o `.png`.
+
+---
+
+### Resultado
+
+Con esta configuración, la aplicación puede cargar y mostrar correctamente las imágenes de cada producto dentro de las tarjetas, cumpliendo con los requisitos del proyecto.
+
+---
+
 ## Conclusión
 
 Este proyecto permitió:
